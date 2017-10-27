@@ -1,9 +1,14 @@
-var gallery = angular.module('gallery', []);
+var myApp = angular.module('myApp', []);
 
-gallery.controller('myGallery', function($http){
-    var myGallery = this;
+myApp.controller('galleryController', function($http){
+    var gallery = this;
 
+    var pictures = [
+        {image: 'sarahharrington', description: 'my github image'},
+        {image: 'sarahharrington', description: 'my github image' }
+    ];
 
+    gallery.pictures = pictures;
 
 
 }) //end of gallery controller

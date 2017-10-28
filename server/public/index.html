@@ -16,24 +16,24 @@
         <h1>My Gallery Thingy</h1>
     </div><!-- header row -->
     
-    <div ng-repeat="picture in gc.pictures"> <!-- controller div -->
+    <div ng-repeat="picture in gc.pictures track by $index"> <!-- controller div -->
         <div class="row"><!-- bootstrap row -->
             <div class="col-md-6 col-sm-12">
                 
-                <div ng-click="gc.imageClicked()"> <!-- image div -->
-                    <img class="images img-rounded img-responsive" ng-src="{{picture.image}}">
+                <div ng-click="gc.showCard($index)"> <!-- image div -->
+                    <img ng-show="picture.showPic" class="images img-rounded img-responsive" ng-src="{{picture.image}}">{{$index}}
                 </div><!-- end image div -->
                 
-                <div ng-hide="gc.descriptionHidden" class="box"><!-- description div -->
-                    <p ng-click="gc.description(description)" class="description">{{picture.description}}</p>
-                </div> <!-- description div -->
+                <div ng-hide="picture.showDesc" class="box"><!-- description div -->
+                    <p class="description">{{picture.description}}</p>
+                </div><!-- description div --> 
                 
                 <div class="likeBox"><!-- like box -->
                     <div>
-                        <i ng-click="count = count+1" ng-init="count=0" class="fa fa-heart fa-2x" aria-hidden="true"></i>
+                        <i ng-click="picture.heartCounter = picture.heartCounter + 1" class="fa fa-heart fa-2x" aria-hidden="true"></i>
                     </div>
                     <div>
-                        <p>This has {{count}} loves!</p>
+                        <p>This has {{picture.heartCounter}} loves!</p>
                     </div>
                 </div><!-- end like box -->
             </div>

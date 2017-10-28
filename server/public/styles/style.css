@@ -6,7 +6,7 @@
 
 .likeBox {
     width: 300px;
-    height: 40px;
+    height: auto;
     background-color: pink;
     margin-top: 0;
 }

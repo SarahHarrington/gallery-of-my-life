@@ -19,10 +19,11 @@ myApp.controller('galleryController', function($http){
     ];
 
     gallery.pictures = pictures;
+    gallery.descriptionHidden = true;
 
-    gallery.picture = function(picture) {
+    gallery.imageClicked = function(picture) {
         console.log('image clicked');
-        
+        gallery.descriptionHidden = false;
     } 
 
     gallery.description = function(description) {

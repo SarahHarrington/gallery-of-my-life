@@ -9,33 +9,29 @@
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="vendors/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/font-awesome-4.7.0 2/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
-<body class="container" ng-controller="galleryController as gc">
-    <div class="row"><!-- header row -->
-        <h1>My Gallery Thingy</h1>
+<body class="container-fluid" ng-controller="galleryController as gc">
+    <div class="row header"><!-- header row -->
+        <p>My Gallery Thingy</p>
     </div><!-- header row -->
-    
-    <div ng-repeat="picture in gc.pictures track by $index"> <!-- controller div -->
-        <div class="row"><!-- bootstrap row -->
-            <div class="col-md-6 col-sm-12">
-                
-                <div ng-click="gc.showCard($index)"> <!-- image div -->
-                    <img  ng-click="picture.viewCounter= picture.viewCounter + 1" ng-show="picture.showPic" class="images img-rounded img-responsive" ng-src="{{picture.image}}">{{$index}}
-                </div><!-- end image div -->
-                
-                <div ng-hide="picture.showDesc" ng-click="gc.showPicture($index)" class="box img-rounded img-responsive"><!-- description div -->
-                    <p class="description">{{picture.description}}</p>
-                </div><!-- description div --> 
-                
-                <div class="counterBox"><!-- counter box -->
-                    <i ng-click="picture.heartCounter = picture.heartCounter + 1" class="fa fa-heart" aria-hidden="true"></i>
-                    <span>{{picture.heartCounter}}</span>
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-                    <span>{{picture.viewCounter}}</span>
-                </div><!-- end counter box -->
-            </div> <!-- end column div -->
-        </div><!-- end bootstrap row -->
+    <div class="row">
+    <div class="col-xs-12 col-lg-5 col-md-5 col-sm-5 fullItem" ng-repeat="picture in gc.pictures track by $index"> <!-- controller div -->
+        <div class="pictureDiv" ng-click="gc.showCard($index)"> <!-- image div -->
+            <img  ng-click="picture.viewCounter= picture.viewCounter + 1" ng-show="picture.showPic" class="images img-rounded img-responsive" ng-src="{{picture.image}}">
+        </div><!-- end image div -->
+        
+        <div class="descDiv" ng-hide="picture.showDesc" ng-click="gc.showPicture($index)" class="box img-rounded img-responsive"><!-- description div -->
+            <p class="description">{{picture.description}}</p>
+        </div><!-- description div --> 
+        
+        <div class="counterBox img-responsive"><!-- counter box -->
+            <i ng-click="picture.heartCounter = picture.heartCounter + 1" class="fa fa-heart" aria-hidden="true"></i>
+            <span>{{picture.heartCounter}}</span>
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            <span>{{picture.viewCounter}}</span>
+        </div><!-- end counter box -->
     </div> <!-- end controller div -->
 </body>
 </html>

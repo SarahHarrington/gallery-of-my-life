@@ -1,21 +1,51 @@
-.box {
-    background-color: lightslategrey;
-    height: auto;
-    width: 300px;
+body {
+    background-color: #C8C8C8;
+    font-family: 'Oswald', sans-serif;
 }
 
-.likeBox {
-    width: 300px;
-    height: auto;
-    background-color: pink;
-    margin-top: 0;
+.header {
+    background-color: #2D2D2D;
+    color: #C8C8C8;
+    padding-left: 2px;
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    box-shadow: 0 10px 6px -6px #777;
 }
 
-.description {
-    margin: 0;
+.descDiv {
+    background-color: #4D043F;
+    color: #FEFFFE;
+    height: 381px;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 32px;
 }
 
-.glyphicon {
-    width: 20px;
-    height: auto;
+.fullItem {
+    min-height: 450px;
+    margin: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #9B6891;
+    border-radius: 5px;
+    box-shadow: 0 10px 6px -6px #777;
 }
+
+.counterBox {
+    height: 50px;
+    background-color: #4D043F;
+    color: #FEFFFE;
+    margin-top: -10px;
+    padding-left: 10px;
+    padding-top: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+   
+}
+
+
+

@@ -37,8 +37,14 @@ myApp.controller('galleryController', function($http){
     gallery.showCard = function(i) {
         console.log('image clicked', i);
         pictures[i].showPic = false;
-        pictures[i].showDisc = false;
+        pictures[i].showDesc = false;
     };
+
+    gallery.showPicture = function(i) {
+        console.log('description clicked', i);
+        pictures[i].showPic = true;
+        pictures[i].showDesc = true;
+    }
 
 
 

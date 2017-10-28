@@ -1,5 +1,21 @@
 .box {
     background-color: lightslategrey;
-    height: 88px;
-    width: 88px;
+    height: auto;
+    width: 300px;
+}
+
+.likeBox {
+    width: 300px;
+    height: 40px;
+    background-color: pink;
+    margin-top: 0;
+}
+
+.description {
+    margin: 0;
+}
+
+.glyphicon {
+    width: 20px;
+    height: auto;
 }

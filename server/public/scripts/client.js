@@ -8,13 +8,14 @@ function pic(u, d) {
         showDesc: true,
         heartCounter: 0,
         viewCounter: 0,
-        comments: ['']
+        comments: []
     }
 }
 
 myApp.controller('galleryController', function($http){
     var gallery = this;
     var imageLikes = 0;
+    var comment = '';
 
     var pictures = [
         pic('https://i.imgur.com/eGMLOdN.jpg', 'The fancy bike.'),
@@ -55,7 +56,9 @@ myApp.controller('galleryController', function($http){
 
     gallery.addComment = function(i) {
         console.log('submit button clicked', i);
-        //picture[i].comments.push(gc.comment);  
+        pictures[i].comments.push(gallery.comment); 
+        gallery.comment = ''; 
+        console.log(pictures[i]);
     }
 
 }) //end of gallery controller

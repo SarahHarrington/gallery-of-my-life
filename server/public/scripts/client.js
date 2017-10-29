@@ -15,6 +15,7 @@ function pic(u, d) {
 myApp.controller('galleryController', function($http){
     var gallery = this;
     var imageLikes = 0;
+    var commentCounter = 0;
 
     var pictures = [
         pic('https://i.imgur.com/eGMLOdN.jpg', 'The fancy bike.'),
@@ -31,12 +32,13 @@ myApp.controller('galleryController', function($http){
     ];
 
     gallery.pictures = pictures;
-    gallery.descriptionHidden = true;
+    // gallery.descriptionHidden = true;
 
     gallery.showCard = function(i) {
         console.log('image clicked', i);
         pictures[i].showPic = false;
         pictures[i].showDesc = false;
+        pictures[i].comments = true;
     };
    
     gallery.size = (function(i){
@@ -50,6 +52,19 @@ myApp.controller('galleryController', function($http){
         console.log('description clicked', i);
         pictures[i].showPic = true;
         pictures[i].showDesc = true;
+        pictures[i].comments = true;
+    }
+
+    gallery.showComments = function(i){
+        console.log('comment icon clicked', i);
+        pictures[i].showPic = false;
+        pictures[i].showDesc = true;
+        pictures[i].comments = false;
+    }
+
+    gallery.addComment = function(i) {
+        console.log('submit button clicked', i);
+        
     }
 
 }) //end of gallery controller

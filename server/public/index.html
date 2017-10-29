@@ -14,9 +14,7 @@
 </head>
 <body class="container-fluid" ng-controller="galleryController as gc">
     <div class="header col-xs-12"><!-- header row -->
-        <i class="fa fa-camera-retro" aria-hidden="true"></i>
         <p>The Gallery.</p>
-        <i class="fa fa-camera-retro" aria-hidden="true"></i>
     </div><!-- header row -->
     <div class="spaceDiv">
     <div class="row">
@@ -29,12 +27,20 @@
             <p class="description">{{picture.description}}</p>
         </div><!-- description div --> 
         
+        <div ng-hide="picture.comments" class="comments"><!-- comment section -->
+            <input ng-model="comment" type="text">
+            <button ng-click="gc.addComment($index)">Submit</button>
+        </div><!-- comment section -->
+
         <div class="counterBox img-responsive"><!-- counter box -->
             <i ng-click="picture.heartCounter = picture.heartCounter + 1" class="fa fa-heart" aria-hidden="true"></i>
             <span>{{picture.heartCounter}}</span>
             <i class="fa fa-eye" aria-hidden="true"></i>
             <span>{{picture.viewCounter}}</span>
+            <i ng-click="gc.showComments($index)" class="fa fa-comment" aria-hidden="true"></i>
+            <span>{{picture.commentCounter}}</span>
         </div><!-- end counter box -->
+
     </div> <!-- end controller div -->
     </div>
     </div>

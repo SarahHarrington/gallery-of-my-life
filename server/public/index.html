@@ -27,7 +27,7 @@
             <p class="description">{{picture.description}}</p>
         </div><!-- description div --> 
         
-        <div ng-hide="picture.comments" class="comments"><!-- comment section -->
+        <div ng-show="picture.commentSection"><!-- comment section -->
             <input ng-model="comment" type="text">
             <button ng-click="gc.addComment($index)">Submit</button>
         </div><!-- comment section -->
@@ -38,7 +38,7 @@
             <i class="fa fa-eye" aria-hidden="true"></i>
             <span>{{picture.viewCounter}}</span>
             <i ng-click="gc.showComments($index)" class="fa fa-comment" aria-hidden="true"></i>
-            <span>{{picture.commentCounter}}</span>
+            <span>{{}}</span>
         </div><!-- end counter box -->
 
     </div> <!-- end controller div -->

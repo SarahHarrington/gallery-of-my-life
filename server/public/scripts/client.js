@@ -15,7 +15,6 @@ function pic(u, d) {
 myApp.controller('galleryController', function($http){
     var gallery = this;
     var imageLikes = 0;
-    var id= 0;
 
     var pictures = [
         pic('https://i.imgur.com/eGMLOdN.jpg', 'The fancy bike.'),
@@ -39,6 +38,13 @@ myApp.controller('galleryController', function($http){
         pictures[i].showPic = false;
         pictures[i].showDesc = false;
     };
+   
+    gallery.size = (function(i){
+        width = pictures[i].width;
+        height = pictures[i].height;
+        console.log(width, height);
+        
+    })
 
     gallery.showPicture = function(i) {
         console.log('description clicked', i);
@@ -46,8 +52,5 @@ myApp.controller('galleryController', function($http){
         pictures[i].showDesc = true;
     }
 
-
-
-
-
 }) //end of gallery controller
+

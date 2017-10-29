@@ -13,13 +13,16 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body class="container-fluid" ng-controller="galleryController as gc">
-    <div class="row header"><!-- header row -->
-        <p>My Gallery Thingy</p>
+    <div class="header col-xs-12"><!-- header row -->
+        <i class="fa fa-camera-retro" aria-hidden="true"></i>
+        <p>The Gallery.</p>
+        <i class="fa fa-camera-retro" aria-hidden="true"></i>
     </div><!-- header row -->
+    <div class="spaceDiv">
     <div class="row">
     <div class="col-xs-12 col-lg-5 col-md-5 col-sm-5 fullItem" ng-repeat="picture in gc.pictures track by $index"> <!-- controller div -->
         <div class="pictureDiv" ng-click="gc.showCard($index)"> <!-- image div -->
-            <img  ng-click="picture.viewCounter= picture.viewCounter + 1" ng-show="picture.showPic" class="images img-rounded img-responsive" ng-src="{{picture.image}}">
+            <img ng-click="picture.viewCounter= picture.viewCounter + 1" ng-show="picture.showPic" class="images img-rounded img-responsive" ng-src="{{picture.image}}">
         </div><!-- end image div -->
         
         <div class="descDiv" ng-hide="picture.showDesc" ng-click="gc.showPicture($index)" class="box img-rounded img-responsive"><!-- description div -->
@@ -33,5 +36,7 @@
             <span>{{picture.viewCounter}}</span>
         </div><!-- end counter box -->
     </div> <!-- end controller div -->
+    </div>
+    </div>
 </body>
 </html>

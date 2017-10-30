@@ -1,5 +1,5 @@
 .container-fluid {
-    padding-left: 0;
+    padding-left: 0; 
 }
 
 body {
@@ -15,7 +15,7 @@ body {
     font-size: 60px;
     box-shadow: 0 10px 6px -6px #777;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     position: fixed;
     z-index: 10;
@@ -37,6 +37,17 @@ body {
     border-radius: 7px;
     font-size: 32px;
 }
+
+/* .commentDiv {
+    background-color: #4D043F;
+    color: #FEFFFE;
+    height: 381px;
+    border-radius: 7px;
+}
+
+input {
+    color: black;
+} */
 
 .fullItem {
     min-height: 450px;

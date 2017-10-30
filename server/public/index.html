@@ -27,18 +27,18 @@
             <p class="description">{{picture.description}}</p>
         </div><!-- description div --> 
         
-        <div ng-show="picture.commentSection"><!-- comment section -->
+        <!-- <div class="commentDiv" ng-show="picture.commentSection">
             <input ng-model="gc.comment" type="text">
             <button ng-click="gc.addComment($index)">Submit</button>
-        </div><!-- comment section -->
+        </div> -->
 
         <div class="counterBox img-responsive"><!-- counter box -->
             <i ng-click="picture.heartCounter = picture.heartCounter + 1" class="fa fa-heart" aria-hidden="true"></i>
             <span>{{picture.heartCounter}}</span>
             <i class="fa fa-eye" aria-hidden="true"></i>
             <span>{{picture.viewCounter}}</span>
-            <i ng-click="gc.showComments($index)" class="fa fa-comment" aria-hidden="true"></i>
-            <span>{{0}}</span>
+            <!-- <i ng-click="gc.showComments($index)" class="fa fa-comment" aria-hidden="true"></i>
+            <span>{{0}}</span> -->
         </div><!-- end counter box -->
 
     </div> <!-- end controller div -->

@@ -30,7 +30,7 @@
         <div class="commentDiv" ng-show="picture.commentSection">
             <input ng-model="gc.comment" type="text">
             <button ng-click="gc.addComment($index)">Submit</button>
-            <p ng-repeat="eachComment in gc.commentsSection">{{eachComment}}</p>
+            <p ng-repeat="eachComment in gc.commentsSection">{{picture.eachComment}}</p>
         </div>
 
         <div class="counterBox img-responsive"><!-- counter box -->
@@ -39,7 +39,7 @@
             <i class="fa fa-eye" aria-hidden="true"></i>
             <span>{{picture.viewCounter}}</span>
             <i ng-click="gc.showComments($index)" class="fa fa-comment" aria-hidden="true"></i>
-            <span>{{picture.viewCounter}}</span>
+            <span>{{picture.commentCount}}</span>
         </div><!-- end counter box -->
 
     </div> <!-- end controller div -->

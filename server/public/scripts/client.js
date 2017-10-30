@@ -54,12 +54,15 @@ myApp.controller('galleryController', function($http){
         pictures[i].commentSection = true;
     }
 
-    gallery.addComment = function(i) {
-        console.log('submit button clicked', i);
-        pictures[i].comments.push(gallery.comment); 
+    gallery.addComment = function(picture) {
+        console.log('submit button clicked', picture);
+        pictures[picture].comments.push(gallery.comment); 
         gallery.comment = ''; 
-        commentsSection = pictures[i].comments;
+        commentsSection = pictures[picture].comments;
         console.log(commentsSection);
+        commentCount = commentsSection.length;
+        console.log(commentCount);
+        
     }
 
 }) //end of gallery controller

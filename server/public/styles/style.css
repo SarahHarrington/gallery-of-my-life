@@ -38,7 +38,7 @@ body {
     font-size: 32px;
 }
 
-/* .commentDiv {
+.commentDiv {
     background-color: #4D043F;
     color: #FEFFFE;
     height: 381px;
@@ -47,7 +47,7 @@ body {
 
 input {
     color: black;
-} */
+}
 
 .fullItem {
     min-height: 450px;

@@ -43,6 +43,7 @@ body {
     color: #FEFFFE;
     height: 381px;
     border-radius: 7px;
+    padding: 5px;
 }
 
 input {
@@ -77,6 +78,10 @@ input {
 
 img:hover {
     opacity: 0.8;
+}
+
+.submit{
+    background-color: #9B6891;
 }
 
 

@@ -33,6 +33,15 @@ myApp.controller('galleryController', function($http){
 
     gallery.pictures = pictures;
 
+    gallery.viewCounter = function(i){
+        pictures[i].viewCounter = pictures[i].viewCounter + 1
+    }
+
+    gallery.likeCounter = function(i) {
+        console.log('heart clicked', i);
+        pictures[i].heartCounter = pictures[i].heartCounter + 1;
+    }
+
     gallery.showCard = function(i) {
         console.log('image clicked', i);
         pictures[i].showPic = false;
@@ -60,7 +69,7 @@ myApp.controller('galleryController', function($http){
         console.log('this is index', i);
         
         pictures[i].comments.push(picture.comment); 
-        gallery.comment = ''; 
+        picture.comment = ''; 
         gallery.commentsSection = pictures[i].comments;
         console.log('array of comments', gallery.commentsSection);
         gallery.commentCount = gallery.commentsSection.length;

@@ -76,6 +76,10 @@ input {
     border-radius: 7px;
 }
 
+.hover:hover {
+    color: #9B6891;
+}
+
 img:hover {
     opacity: 0.8;
 }

@@ -52,6 +52,7 @@ myApp.controller('galleryController', function($http){
         pictures[i].showPic = false;
         pictures[i].showDesc = true;
         pictures[i].commentSection = true;
+        gallery.commentsSection = pictures[i].comments;
     }
 
     gallery.addComment = function(i, picture) {
@@ -65,8 +66,12 @@ myApp.controller('galleryController', function($http){
         gallery.commentCount = gallery.commentsSection.length;
         console.log(gallery.commentCount);
         console.log('pictures', pictures);
-        
-        
+    }
+
+    gallery.backToPicture = function(i) {
+        console.log('picture icon clicked', i);
+        pictures[i].showPic = true;
+        pictures[i].commentSection = false;
     }
 
 }) //end of gallery controller

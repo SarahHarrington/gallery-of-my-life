@@ -54,14 +54,18 @@ myApp.controller('galleryController', function($http){
         pictures[i].commentSection = true;
     }
 
-    gallery.addComment = function(picture) {
+    gallery.addComment = function(i, picture) {
         console.log('submit button clicked', picture);
-        pictures[picture].comments.push(gallery.comment); 
+        console.log('this is index', i);
+        
+        pictures[i].comments.push(picture.comment); 
         gallery.comment = ''; 
-        commentsSection = pictures[picture].comments;
-        console.log(commentsSection);
-        commentCount = commentsSection.length;
-        console.log(commentCount);
+        gallery.commentsSection = pictures[i].comments;
+        console.log('array of comments', gallery.commentsSection);
+        gallery.commentCount = gallery.commentsSection.length;
+        console.log(gallery.commentCount);
+        console.log('pictures', pictures);
+        
         
     }
 

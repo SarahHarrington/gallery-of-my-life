@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Gallery of My Life</title>
     <script src="vendors/angular.min.js"></script>
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="vendors/bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -28,9 +28,9 @@
         </div><!-- description div --> 
         
         <div class="commentDiv" ng-show="picture.commentSection">
-            <input ng-model="gc.comment" type="text">
-            <button ng-click="gc.addComment($index)">Submit</button>
-            <p ng-repeat="eachComment in gc.commentsSection">{{picture.eachComment}}</p>
+            <input ng-model="picture.comment" type="text">
+            <button ng-click="gc.addComment($index, picture)">Submit</button>
+            <p ng-repeat="eachComment in picture.comments">{{eachComment}}</p>
         </div>
 
         <div class="counterBox img-responsive"><!-- counter box -->
@@ -39,7 +39,7 @@
             <i class="fa fa-eye" aria-hidden="true"></i>
             <span>{{picture.viewCounter}}</span>
             <i ng-click="gc.showComments($index)" class="fa fa-comment" aria-hidden="true"></i>
-            <span>{{picture.commentCount}}</span>
+            <span>{{picture.comments.length}}</span>
         </div><!-- end counter box -->
 
     </div> <!-- end controller div -->
